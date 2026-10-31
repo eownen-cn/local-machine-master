@@ -4,3 +4,7 @@ dist/
 !.env.example
 playwright-report/
 test-results/
+
+.grove-data/
+
+build-windows/

@@ -1,6 +1,6 @@
 {
   "name": "english-grove",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,20 +8,28 @@
     "build": "tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run src",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "serve:lan": "node --experimental-strip-types scripts/server.mjs",
+    "package:windows": "python3 scripts/package_windows.py",
+    "test:api": "node scripts/test-server.mjs",
+    "test:sync": "node scripts/test-cross-device.mjs"
   },
   "dependencies": {
+    "lucide-react": "^0.468.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "lucide-react": "^0.468.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "prettier": "3.5.3",
     "typescript": "~5.7.2",
     "vite": "^6.1.0",
-    "vitest": "^3.0.0",
-    "@playwright/test": "^1.51.0",
-    "vite-plugin-pwa": "^0.21.0"
+    "vite-plugin-pwa": "^0.21.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22.18.0"
   }
 }
